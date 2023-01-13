@@ -814,9 +814,126 @@ input {
 
 /*=============== BreakPoints ===============*/
 /* for large devices */
-@media screen and (max-width: 1200px) {}
+@media screen and (max-width: 1200px) {
+  :root {
+    --fs-h1: 2.25rem;
+    --fs-h2: 1.75rem;
+    --fs-lg: 1rem;
+    --fs-base: 0.938rem;
+    --fs-sm: 0.813rem;
+    --fs-xs: 0.687rem;
+  }
 
-@media screen and (max-width: 992px) {}
+  .container {
+    max-width: 960px;
+  }
+.home__socials{
+  padding:1rem 0;
+}
+
+  .home__container {
+    grid-template-columns: 5fr 7fr;
+  }
+
+  .skills_container,
+  .services__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-100%);
+  }
+
+  .nav__list {
+    flex-direction: column;
+    row-gap: 2.125rem;
+    text-align: center;
+  }
+
+  .nav__toggle,
+  .nav__close {
+    display: block;
+  }
+
+  .nav__close {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 2.7rem;
+    left: 8%;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  .nav__toggle {
+    color: #fff;
+    font-size: 1.25rem;
+    opacity: 0.5;
+  }
+
+  .scroll-header .nav__toggle {
+    color: var(--text-color);
+    opacity: 1;
+  }
+
+  .home {
+    padding-top: 5.25rem;
+  }
+
+  .home__img {
+    display: none;
+  }
+
+  .section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .project__item,
+  .resume__container,
+  .home__container {
+    grid-template-columns: 1fr;
+  }
+
+  .resume__container {
+    row-gap: 3.75rem;
+  }
+
+  .testimonial__container {
+    padding-top: 4.4rem;
+    padding-bottom: 6.25rem;
+  }
+
+  .testimonial__item {
+    padding: 0 3.875rem;
+  }
+
+  .posts__container {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.875rem;
+  }
+
+  .contact__container {
+    grid-template-columns: 5fr 7fr;
+  }
+
+}
 
 /* for medium devices */
 @media screen and (max-width: 768px) {}
