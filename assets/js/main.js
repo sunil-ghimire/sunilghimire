@@ -34,10 +34,10 @@ var testiSwiper = new Swiper('.testimonial__container', {
 
 /*=============== contact form =============== */
 const contactForm = document.getElementById('contact-form');
-const contactName = document.getElementById('contact-name');
-const contactEmail = document.getElementById('contact-email');
-const Message = document.getElementById('message');
-const contactMessage = document.getElementById('contact-message');
+contactName = document.getElementById('contact-name');
+contactEmail = document.getElementById('contact-email');
+Message = document.getElementById('message');
+contactMessage = document.getElementById('contact-message');
 
 const sendEmail = (e) => {
     e.preventDefault();

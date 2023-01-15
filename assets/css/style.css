@@ -469,7 +469,9 @@ input {
 /*=============== Projects ===============*/
 .project__categories {
   display: flex;
+  flex-wrap: wrap;
   column-gap: 3rem;
+  row-gap: 0.25rem;
   margin-bottom: 1.875rem;
 }
 
@@ -680,6 +682,7 @@ input {
 
 .post__title {
   margin-bottom: 1.1em;
+  color: var(--text-color);
 }
 
 .post__description {
@@ -788,12 +791,12 @@ input {
   color: #fff;
 }
 
-.color-light {
-  opacity: 0;
-}
-
 .color-dark {
   opacity: 0.4;
+}
+
+.color-light {
+  opacity: 1;
 }
 
 .contact__button {
@@ -809,6 +812,85 @@ input {
 }
 
 /*=============== Blog Details ===============*/
+.blog__header {
+  height: 400px;
+  background: url(../img/bg.jpg);
+  background-size: cover;
+  background-position: 50%;
+  position: relative;
+}
+
+.blog__header::before {
+  content: '';
+  background: var(--linear-gradient);
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.blog__details {
+  background-color: #fff;
+  padding: 3rem 4.25rem 3.75rem;
+  margin-top: -16rem;
+  box-shadow: 0 1px 21px rgb(0, 0, 0 / 14%);
+  z-index: 10;
+  position: relative;
+  margin-bottom: 6.25rem;
+}
+
+.back__to-home {
+  display: inline-flex;
+  column-gap: 0.6rem;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.post__details-title {
+  text-transform: uppercase;
+  margin-top: 1.67em;
+  margin-bottom: 0.84em;
+}
+
+.post__details-date {
+  color: var(--text-color-alt);
+  margin-bottom: 1.12em;
+}
+
+.post__details {
+  margin-bottom: 1.12em;
+  text-align: justify;
+}
+
+figure {
+  padding-top: 0.625rem;
+  padding-bottom: 2.2rem;
+}
+
+figcaption {
+  color: var(--text-color-alt);
+  font-style: italic;
+  font-family: var(--mono-font);
+  margin-top: 1.4em;
+}
+
+.post__social-share {
+  display: inline-flex;
+  column-gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.post__share {
+  margin-top: -2px;
+  color: var(--text-color);
+}
+
+.post__share-link {
+  color: var(--title-color);
+  font-size: 1.75rem;
+  opacity: 0.4;
+  margin-right: 0.14em;
+}
 
 /*=============== Style Switcher ===============*/
 
@@ -827,9 +909,10 @@ input {
   .container {
     max-width: 960px;
   }
-.home__socials{
-  padding:1rem 0;
-}
+
+  .home__socials {
+    padding: 1rem 0;
+  }
 
   .home__container {
     grid-template-columns: 5fr 7fr;
@@ -936,9 +1019,82 @@ input {
 }
 
 /* for medium devices */
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
 
-@media screen and (max-width: 576px) {}
+  .posts__container,
+  .contact__container,
+  .skills_container,
+  .services__container {
+    grid-template-columns: 1fr;
+  }
+
+  .skills_container {
+    row-gap: 2.5rem;
+  }
+
+  .project__data {
+    padding: 2rem 1.25rem 1.5rem 1.25rem;
+  }
+
+  .testimonial__item {
+    padding: 0 3rem;
+  }
+
+  .contact__container {
+    row-gap: 2rem;
+  }
+
+  .blog__details {
+    padding: 2.5rem 1.875rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .home {
+    padding-top: 4.4rem;
+  }
+
+  .project__categories {
+    column-gap: 1.5rem;
+  }
+
+  .tags li {
+    margin-bottom: 0.6rem;
+  }
+
+  .testimonial__item {
+    padding: 0 1.5rem;
+  }
+
+  .swiper-button-next img,
+  .swiper-button-prev img {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+}
 
 /* for small devices */
-@media screen and (max-width: 350px) {}
+@media screen and (max-width: 350px) {
+  :root {
+    --fs-h1: 2rem;
+  }
+
+  .home__work {
+    font-size: var(--fs-sm);
+  }
+
+  .home__list {
+    font-size: 0.875rem;
+  }
+
+  .home__list dd {
+    padding-left: 5.75em;
+  }
+
+  .home__social-link {
+    font-size: 1.3rem;
+  }
+}
